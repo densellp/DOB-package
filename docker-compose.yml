@@ -1,0 +1,25 @@
+version: '3'
+services:
+  go-runner:
+    image: go-releaser:latest
+    # build: .
+    # environment:
+    #   - ORGANIZATION=$ORGANIZATION
+    #   - REG_TOKEN=$REG_TOKEN
+    #   - REPO=$REPO
+    restart: unless-stopped
+    # networks:
+    #   - go-runner
+  # nexus:
+  #   image: sonatype/nexus3:latest
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8081:8081"
+  #   volumes:
+  #     - nexus-data:/nexus-data
+  #   networks:
+  #     - go-runner
+# volumes:
+#   nexus-data:
+# networks:
+#   go-runner:
