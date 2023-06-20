@@ -33,7 +33,7 @@ jobs:
         - run: git fetch --force --tags
 
         - name: Build docker image
-          run: docker build -t gorunner:${{ github.run_number }} .
+          run: docker build -t gorunner . # Need this because version might mess with name
 
         - name: Log in to registry
           # This is where you will update the personal access token to GITHUB_TOKEN
