@@ -1,0 +1,22 @@
+name: Gobrew Build an publish
+
+on:
+  # push:
+  #   branches: [ main ]
+  #   tags:
+  #     - 'v0.2.0'
+  pull_request:
+    branches: [ main ]
+    types:
+      - closed
+
+jobs:
+  Hello-World:
+
+    runs-on: self-hosted
+
+    if: ${{ github.event.pull_request.merged == true }}
+    steps:
+
+        - name: Say Hello to the nice Man
+          run: echo "Hello World!"
